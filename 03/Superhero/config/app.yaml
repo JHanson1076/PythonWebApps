@@ -19,10 +19,10 @@ services:
   name: webapps-demo-django
   routes:
   - path: /
-  run_command: gunicorn --worker-tmp-dir /dev/shm config.wsgi
+  run_command: |
     python manage.py migrate --no-input
     gunicorn --worker-tmp-dir /dev/shm config.wsgi
-  source_dir: 03/Superhero/Superhero
+  source_dir: 03/Superhero
 static_sites:
 - environment_slug: html
   github:
@@ -32,4 +32,4 @@ static_sites:
   name: webapps-demo-static
   routes:
   - path: /static
-  source_dir: 03/Superhero/Superhero/static
+  source_dir: 03/Superhero/static
