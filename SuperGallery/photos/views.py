@@ -21,4 +21,6 @@ class PhotoListView(TemplateView):
          return dict(photos=photos)
 
 
+ 
+
 
