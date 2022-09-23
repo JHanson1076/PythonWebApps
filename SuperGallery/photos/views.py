@@ -6,8 +6,7 @@ def photo_list():
     def photo_details(i, f):
         caption = f'Natasha Ramonav: {i}' if i == 0 else None
         return dict(id=i, file=f, caption=caption)
-    
-        
+
 
     photos = Path('static/images').iterdir()
     photos = [photo_details(i, f) for i, f in enumerate(photos)]
