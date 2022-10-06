@@ -4,15 +4,22 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+<<<<<<< HEAD
         
 
         
+=======
+>>>>>>> cfd8cceb88fd554cab1ad881984f3f5f090c9cd1
         {
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
             "program": "manage.py",
+<<<<<<< HEAD
             "cwd": "${workspaceFolder}/03/Superhero/Superhero",
+=======
+            "cwd": "${workspaceFolder}/ClassroomDemos/Superhero",
+>>>>>>> cfd8cceb88fd554cab1ad881984f3f5f090c9cd1
             "args": [
                 "runserver"
             ],
