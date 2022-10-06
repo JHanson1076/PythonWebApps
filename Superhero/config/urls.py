@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from hero.views import HulkView, IndexView, IronManView, BlackWidow, GhostRider, Spiderman 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('hulk',        HulkView.as_view()),
+    path('ironman',        IronManView.as_view()),
+    path('blackwidow',        BlackWidow.as_view()),
+    path('ghostrider',        GhostRider.as_view()),
+    path('spiderman',        Spiderman.as_view()),
+
+    path('',            IndexView.as_view()),
 ]
