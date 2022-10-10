@@ -32,4 +32,4 @@ static_sites:
   name: webapps-demo-static
   routes:
   - path: /static
-  source_dir: PythonWebApps/Cotepad/static
+  source_dir: Cotepad/static
