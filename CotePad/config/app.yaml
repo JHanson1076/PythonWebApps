@@ -21,6 +21,7 @@ services:
   - path: /
   run_command: |
     python manage.py migrate --no-input
+    python manage.py loaddata data.json
     gunicorn --worker-tmp-dir /dev/shm config.wsgi
   source_dir: CotePad
 static_sites:
