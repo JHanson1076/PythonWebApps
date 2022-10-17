@@ -1,22 +1,38 @@
-from django.views.generic import TemplateView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, RedirectView, UpdateView
 
 from .models import Cote
 
 
-class CoteListView(TemplateView):
-    template_name = 'cotes.html'
 
-    def get_context_data(self, **kwargs):
-        return {
-            'object_list': Cote.objects.all()
-        }
+class CoteListView(ListView):
+    template_name = 'cote/list.html'
+    model = Cote
+    
 
 
-class CoteDetailView(TemplateView):
-    template_name = 'cote.html'
+class CoteDetailView(DetailView):
+    template_name = 'cote/detail.html'
+    model = Cote
+    
 
-    def get_context_data(self, **kwargs):
-        return {
-            'cote': Cote.objects.get(pk=kwargs['pk'])
-        }
+
+class CoteCreateView(LoginRequiredMixin,CreateView):
+    template_name = 'cote/add.html'
+    model = Cote
+    fields = '__all__'
+
+
+class CoteUpdateView(LoginRequiredMixin,UpdateView):
+    template_name = "cote/edit.html"
+    model = Cote
+    fields = '__all__'
+
+
+
+class CoteDeleteView(LoginRequiredMixin,DeleteView):
+    model = Cote
+    template_name = 'cote/delete.html'
+    success_url = reverse_lazy('cote_list')
